@@ -1,0 +1,104 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class AAS extends JFrame implements ActionListener {
+        JPanel mainPanel = new JPanel();
+        JTextField marks = new JTextField();
+        JLabel grade = new JLabel();
+        JButton btnEvaluate = new JButton("Evaluate");
+
+        public AAS(){
+                mainPanel.setLayout(new GridLayout(9, 7));
+                setContentPane(mainPanel);
+                setSize(500, 300);
+                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                setVisible(true);
+
+                JLabel lblTitle = new JLabel("Assessment Application System");
+                lblTitle.setFont(new Font("DejaVu Sans Mono",Font.BOLD,16));
+                mainPanel.add(lblTitle);
+
+                JLabel lblClass = new JLabel("Class");
+                mainPanel.add(lblClass);
+                JComboBox cbClass = new JComboBox();
+                cbClass.addItem("3A");
+                cbClass.addItem("3B");
+                cbClass.addItem("3C");
+                mainPanel.add(cbClass);
+
+                JLabel lblStudDetails = new JLabel("Student Details");
+                lblStudDetails.setFont(new Font("DejaVu Sans Mono", Font.PLAIN, 12));
+                mainPanel.add(lblStudDetails);
+
+                JLabel lblName = new JLabel("Name");
+                mainPanel.add(lblName);
+                JTextField name = new JTextField();
+                mainPanel.add(name);
+
+                JLabel lblID = new JLabel("ID");
+                mainPanel.add(lblID);
+                JTextField id = new JTextField();
+                mainPanel.add(id);
+
+                JLabel lblSubjects = new JLabel("Subjects");
+                lblStudDetails.setFont(new Font("Deja Sans Mono", Font.PLAIN, 12));
+                mainPanel.add(lblSubjects);
+
+                JRadioButton rbCSC520 = new JRadioButton("CSC520");
+                mainPanel.add(rbCSC520);
+                JRadioButton rbCSC510 = new JRadioButton("CSC510");
+                mainPanel.add(rbCSC510);
+                JRadioButton rbCSC583 = new JRadioButton("CSC583");
+                mainPanel.add(rbCSC583);
+                JRadioButton rbCSC435 = new JRadioButton("CSC435");
+                mainPanel.add(rbCSC435);
+                JRadioButton rbMAT423 = new JRadioButton("MAT423");
+                mainPanel.add(rbMAT423);
+                JRadioButton rbELC501 = new JRadioButton("ELC501");
+                mainPanel.add(rbELC501);
+
+                ButtonGroup btnGroup = new ButtonGroup();
+                btnGroup.add(rbCSC520);
+                btnGroup.add(rbCSC510);
+                btnGroup.add(rbCSC583);
+                btnGroup.add(rbCSC435);
+                btnGroup.add(rbMAT423);
+                btnGroup.add(rbELC501);
+
+                JLabel lblMarks = new JLabel("Enter marks : ");
+                mainPanel.add(lblMarks);
+                mainPanel.add(marks);
+
+                JLabel lblGrade = new JLabel("Grade : ");
+                mainPanel.add(lblGrade);
+                mainPanel.add(grade);
+
+                mainPanel.add(btnEvaluate);
+        }
+
+        public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == btnEvaluate) {
+                        char ans = 0;
+                        double x = Double.parseDouble(marks.getText());
+                        if (x >= 80)
+                                ans = 'A';
+                        else if (x >= 70)
+                                ans = 'B';
+                        else if (x >= 60)
+                                ans = 'C';
+                        else if (x >= 50)
+                                ans = 'D';
+                        else
+                                ans = 'E';
+                        grade.setText(String.valueOf(ans));
+                }
+        }
+
+        public static void main(String args[]){AAS aas = new AAS();}
+}
+
+
+
+
