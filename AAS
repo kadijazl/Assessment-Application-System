@@ -16,11 +16,13 @@ public class AAS extends JFrame implements ActionListener {
                 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 setVisible(true);
 
-                JLabel lblTitle = new JLabel("Assessment Application System");
+                JLabel lblTitle = new JLabel();
+                lblTitle.setText("Assessment Application System");
                 lblTitle.setFont(new Font("DejaVu Sans Mono",Font.BOLD,16));
                 mainPanel.add(lblTitle);
 
-                JLabel lblClass = new JLabel("Class");
+                JLabel lblClass = new JLabel();
+                lblClass.setText("Class");
                 mainPanel.add(lblClass);
                 JComboBox cbClass = new JComboBox();
                 cbClass.addItem("3A");
@@ -28,35 +30,45 @@ public class AAS extends JFrame implements ActionListener {
                 cbClass.addItem("3C");
                 mainPanel.add(cbClass);
 
-                JLabel lblStudDetails = new JLabel("Student Details");
+                JLabel lblStudDetails = new JLabel();
+                lblStudDetails.setText("Student Details");
                 lblStudDetails.setFont(new Font("DejaVu Sans Mono", Font.PLAIN, 12));
                 mainPanel.add(lblStudDetails);
 
-                JLabel lblName = new JLabel("Name");
+                JLabel lblName = new JLabel();
+                lblName.setText("Name");
                 mainPanel.add(lblName);
                 JTextField name = new JTextField();
                 mainPanel.add(name);
 
-                JLabel lblID = new JLabel("ID");
+                JLabel lblID = new JLabel();
+                lblID.setText("ID");
                 mainPanel.add(lblID);
                 JTextField id = new JTextField();
                 mainPanel.add(id);
 
-                JLabel lblSubjects = new JLabel("Subjects");
+                JLabel lblSubjects = new JLabel();
+                lblSubjects.setText("Subjects");
                 lblStudDetails.setFont(new Font("Deja Sans Mono", Font.PLAIN, 12));
                 mainPanel.add(lblSubjects);
 
-                JRadioButton rbCSC520 = new JRadioButton("CSC520");
+                JRadioButton rbCSC520 = new JRadioButton();
+                rbCSC520.setText("CSC520");
                 mainPanel.add(rbCSC520);
-                JRadioButton rbCSC510 = new JRadioButton("CSC510");
+                JRadioButton rbCSC510 = new JRadioButton();
+                rbCSC510.setText("CSC510");
                 mainPanel.add(rbCSC510);
-                JRadioButton rbCSC583 = new JRadioButton("CSC583");
+                JRadioButton rbCSC583 = new JRadioButton();
+                rbCSC583.setText("CSC583");
                 mainPanel.add(rbCSC583);
-                JRadioButton rbCSC435 = new JRadioButton("CSC435");
+                JRadioButton rbCSC435 = new JRadioButton();
+                rbCSC435.setText("CSC435");
                 mainPanel.add(rbCSC435);
-                JRadioButton rbMAT423 = new JRadioButton("MAT423");
+                JRadioButton rbMAT423 = new JRadioButton();
+                rbMAT423.setText("MAT423");
                 mainPanel.add(rbMAT423);
-                JRadioButton rbELC501 = new JRadioButton("ELC501");
+                JRadioButton rbELC501 = new JRadioButton();
+                rbELC501.setText("ELC501");
                 mainPanel.add(rbELC501);
 
                 ButtonGroup btnGroup = new ButtonGroup();
@@ -67,11 +79,13 @@ public class AAS extends JFrame implements ActionListener {
                 btnGroup.add(rbMAT423);
                 btnGroup.add(rbELC501);
 
-                JLabel lblMarks = new JLabel("Enter marks : ");
+                JLabel lblMarks = new JLabel();
+                lblMarks.setText("Enter marks : ");
                 mainPanel.add(lblMarks);
                 mainPanel.add(marks);
 
-                JLabel lblGrade = new JLabel("Grade : ");
+                JLabel lblGrade = new JLabel();
+                lblGrade.setText("Grade : ");
                 mainPanel.add(lblGrade);
                 mainPanel.add(grade);
 
