@@ -109,7 +109,6 @@ public class AAS extends JFrame implements ActionListener {
                         grade.setText(String.valueOf(ans));
                 }
         }
-
         public static void main(String args[]){AAS aas = new AAS();}
 }
 
