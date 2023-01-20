@@ -7,69 +7,144 @@ public class AAS extends JFrame implements ActionListener {
         JPanel mainPanel = new JPanel();
         JTextField marks = new JTextField();
         JLabel grade = new JLabel();
-        JButton btnEvaluate = new JButton("Evaluate");
-
+        JButton btnEvaluate = new JButton();
         public AAS(){
-                mainPanel.setLayout(new GridLayout(9, 7));
+                setTitle("Assessment Application System");
+                mainPanel.setLayout(new GridBagLayout());
+                GridBagConstraints gbc = new GridBagConstraints();
                 setContentPane(mainPanel);
-                setSize(500, 300);
+                setSize(600,300);
                 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 setVisible(true);
 
                 JLabel lblTitle = new JLabel();
                 lblTitle.setText("Assessment Application System");
-                lblTitle.setFont(new Font("DejaVu Sans Mono",Font.BOLD,16));
-                mainPanel.add(lblTitle);
+                lblTitle.setFont(new Font("DejaVu Sans Mono",Font.BOLD,18));
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=1;            //column
+                gbc.gridy=0;            //row
+                gbc.gridwidth=3;        //take up 3 column
+                gbc.ipady=30;
+                mainPanel.add(lblTitle, gbc);
 
                 JLabel lblClass = new JLabel();
                 lblClass.setText("Class");
-                mainPanel.add(lblClass);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=0;            //column
+                gbc.gridy=1;            //row
+                gbc.weightx=0;
+                gbc.ipady=0;
+                mainPanel.add(lblClass, gbc);
+
                 JComboBox cbClass = new JComboBox();
                 cbClass.addItem("3A");
                 cbClass.addItem("3B");
                 cbClass.addItem("3C");
-                mainPanel.add(cbClass);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=1;            //column
+                gbc.gridy=1;            //row
+                gbc.gridwidth=1;
+                mainPanel.add(cbClass, gbc);
 
                 JLabel lblStudDetails = new JLabel();
                 lblStudDetails.setText("Student Details");
-                lblStudDetails.setFont(new Font("DejaVu Sans Mono", Font.PLAIN, 12));
-                mainPanel.add(lblStudDetails);
+                lblStudDetails.setFont(new Font("DejaVu Sans Mono", Font.BOLD, 14));
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=1;            //column
+                gbc.gridy=3;            //row
+                gbc.gridwidth=2;
+                gbc.ipady=20;
+                mainPanel.add(lblStudDetails, gbc);
 
                 JLabel lblName = new JLabel();
-                lblName.setText("Name");
-                mainPanel.add(lblName);
+                lblName.setText("Name : ");
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=0;            //column
+                gbc.gridy=4;            //row
+                gbc.gridwidth=1;
+                gbc.ipady=0;
+                mainPanel.add(lblName, gbc);
+
                 JTextField name = new JTextField();
-                mainPanel.add(name);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=1;            //column
+                gbc.gridy=4;            //row
+                gbc.gridwidth=3;
+                mainPanel.add(name, gbc);
 
                 JLabel lblID = new JLabel();
-                lblID.setText("ID");
-                mainPanel.add(lblID);
+                lblID.setText("ID : ");
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=0;            //column
+                gbc.gridy=5;            //row
+                gbc.gridwidth=1;
+                mainPanel.add(lblID, gbc);
+
                 JTextField id = new JTextField();
-                mainPanel.add(id);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=1;            //column
+                gbc.gridy=5;            //row
+                gbc.gridwidth=3;
+                mainPanel.add(id, gbc);
 
                 JLabel lblSubjects = new JLabel();
                 lblSubjects.setText("Subjects");
-                lblStudDetails.setFont(new Font("Deja Sans Mono", Font.PLAIN, 12));
-                mainPanel.add(lblSubjects);
+                lblSubjects.setFont(new Font("DejaVu Sans Mono", Font.BOLD, 14));
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=4;            //column
+                gbc.gridy=3;            //row
+                gbc.gridwidth=2;
+                gbc.ipady=20;
+                mainPanel.add(lblSubjects, gbc);
 
                 JRadioButton rbCSC520 = new JRadioButton();
                 rbCSC520.setText("CSC520");
-                mainPanel.add(rbCSC520);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=4;            //column
+                gbc.gridy=4;            //row
+                gbc.gridwidth=1;
+                gbc.ipady=0;
+                mainPanel.add(rbCSC520, gbc);
+
                 JRadioButton rbCSC510 = new JRadioButton();
                 rbCSC510.setText("CSC510");
-                mainPanel.add(rbCSC510);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=4;            //column
+                gbc.gridy=5;            //row
+                gbc.gridwidth=1;
+                mainPanel.add(rbCSC510,gbc);
+
                 JRadioButton rbCSC583 = new JRadioButton();
                 rbCSC583.setText("CSC583");
-                mainPanel.add(rbCSC583);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=4;            //column
+                gbc.gridy=6;            //row
+                gbc.gridwidth=1;
+                mainPanel.add(rbCSC583,gbc);
+
                 JRadioButton rbCSC435 = new JRadioButton();
                 rbCSC435.setText("CSC435");
-                mainPanel.add(rbCSC435);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=5;            //column
+                gbc.gridy=4;            //row
+                gbc.gridwidth=1;
+                mainPanel.add(rbCSC435,gbc);
+
                 JRadioButton rbMAT423 = new JRadioButton();
                 rbMAT423.setText("MAT423");
-                mainPanel.add(rbMAT423);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=5;            //column
+                gbc.gridy=5;            //row
+                gbc.gridwidth=1;
+                mainPanel.add(rbMAT423, gbc);
+
                 JRadioButton rbELC501 = new JRadioButton();
                 rbELC501.setText("ELC501");
-                mainPanel.add(rbELC501);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=5;            //column
+                gbc.gridy=6;            //row
+                gbc.gridwidth=1;
+                mainPanel.add(rbELC501,gbc);
 
                 ButtonGroup btnGroup = new ButtonGroup();
                 btnGroup.add(rbCSC520);
@@ -81,37 +156,61 @@ public class AAS extends JFrame implements ActionListener {
 
                 JLabel lblMarks = new JLabel();
                 lblMarks.setText("Enter marks : ");
-                mainPanel.add(lblMarks);
-                mainPanel.add(marks);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=0;            //column
+                gbc.gridy=7;            //row
+                gbc.gridwidth=1;
+                gbc.ipady=20;
+                mainPanel.add(lblMarks, gbc);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=1;            //column
+                gbc.gridy=7;            //row
+                gbc.gridwidth=1;
+                gbc.ipady=0;
+                mainPanel.add(marks, gbc);
 
                 JLabel lblGrade = new JLabel();
                 lblGrade.setText("Grade : ");
-                mainPanel.add(lblGrade);
-                mainPanel.add(grade);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=4;            //column
+                gbc.gridy=7;            //row
+                gbc.gridwidth=1;
+                gbc.ipady=20;
+                mainPanel.add(lblGrade,gbc);
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=5;            //column
+                gbc.gridy=7;            //row
+                gbc.gridwidth=2;
+                gbc.ipady=0;
+                mainPanel.add(grade,gbc);
 
-                mainPanel.add(btnEvaluate);
+                btnEvaluate.setText("Evaluate");
+                gbc.fill=GridBagConstraints.HORIZONTAL;
+                gbc.gridx=5;            //column
+                gbc.gridy=8;            //row
+                gbc.gridwidth=1;
+                mainPanel.add(btnEvaluate,gbc);
         }
 
         public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnEvaluate) {
                         char ans = 0;
                         double x = Double.parseDouble(marks.getText());
-                        if (x >= 80)
+                        double y = 0;
+                        y = x/50 *100;  //marks per 100%
+                        if (y >= 80)
                                 ans = 'A';
-                        else if (x >= 70)
+                        else if (y >= 70)
                                 ans = 'B';
-                        else if (x >= 60)
+                        else if (y >= 60)
                                 ans = 'C';
-                        else if (x >= 50)
+                        else if (y >= 50)
                                 ans = 'D';
                         else
                                 ans = 'E';
                         grade.setText(String.valueOf(ans));
                 }
         }
+
         public static void main(String args[]){AAS aas = new AAS();}
 }
-
-
-
-
