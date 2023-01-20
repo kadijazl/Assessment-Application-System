@@ -185,6 +185,7 @@ public class AAS extends JFrame implements ActionListener {
                 mainPanel.add(grade,gbc);
 
                 btnEvaluate.setText("Evaluate");
+                btnEvaluate.addActionListener(this);
                 gbc.fill=GridBagConstraints.HORIZONTAL;
                 gbc.gridx=5;            //column
                 gbc.gridy=8;            //row
